@@ -17,7 +17,7 @@ export default function Home() {
           </h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
             One link. Client fills their brief, reviews your proposal, signs the contract,
-            and pays the deposit — without a single back-and-forth email.
+            and pays the deposit. No back-and-forth email.
           </p>
           <div className="flex items-center justify-center gap-4">
             <Link
@@ -30,7 +30,7 @@ export default function Home() {
               href="/pricing"
               className="text-slate-600 px-8 py-4 rounded-lg text-base font-medium hover:text-slate-900 transition-colors"
             >
-              See pricing →
+              See pricing
             </Link>
           </div>
         </section>
@@ -47,8 +47,8 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
                 { num: '01', title: 'Brief', desc: 'Client answers your intake questions about their project, goals, and timeline.' },
-                { num: '02', title: 'Proposal', desc: 'They review the scope and pricing you've put together based on their brief.' },
-                { num: '03', title: 'Contract', desc: 'Client signs with a typed name — legally binding in most jurisdictions.' },
+                { num: '02', title: 'Proposal', desc: 'They review the scope and pricing you have put together based on their brief.' },
+                { num: '03', title: 'Contract', desc: 'Client signs with a typed name - legally binding in most jurisdictions.' },
                 { num: '04', title: 'Deposit', desc: 'They pay the deposit online. You get notified instantly. Project starts.' },
               ].map((step) => (
                 <div key={step.num} className="bg-white border border-slate-200 rounded-xl p-6">
@@ -80,7 +80,7 @@ export default function Home() {
 
       <footer className="border-t border-slate-200 py-8">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="text-sm text-slate-400">© 2026 BriefRamp. All rights reserved.</span>
+          <span className="text-sm text-slate-400">2026 BriefRamp. All rights reserved.</span>
           <div className="flex gap-6">
             <Link href="/terms" className="text-sm text-slate-400 hover:text-slate-600">Terms</Link>
             <Link href="/privacy" className="text-sm text-slate-400 hover:text-slate-600">Privacy</Link>
