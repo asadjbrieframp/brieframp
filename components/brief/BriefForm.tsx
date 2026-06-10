@@ -54,7 +54,8 @@ export default function BriefForm({ clientId }: BriefFormProps) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type: 'brief_submitted', clientId }),
-      }).catch(() => {})      router.push('/brief/thank-you')
+      }).catch(() => {})
+      router.push('/brief/thank-you')
     } catch {
       setSubmitting(false)
     }
