@@ -24,6 +24,16 @@ export default async function ProposalPage({ params }: { params: Promise<{ token
       .from('clients')
       .update({ status: 'proposal_approved' })
       .eq('id', proposal.client_id)
+
+  // Notify designer via email
+  try {
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://brieframp.com'
+    await fetch(appUrl + '/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'proposal_approved', proposalId: proposal.id }),
+    })
+  } catch (_) {}
   }
 
   const isApproved = proposal.status === 'approved'
