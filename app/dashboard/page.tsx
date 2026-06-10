@@ -165,12 +165,10 @@ export default async function DashboardPage() {
                 <Link
                   key={client.id}
                   href={`/clients/${client.id}`}
-                  className="flex items-center justify-between px-6 py-4 transition-colors group"
+                  className="flex items-center justify-between px-6 py-4 transition-colors group hover:bg-[#fafafe]"
                   style={{
                     borderBottom: i < clients.length - 1 ? '1px solid rgba(226,232,240,0.6)' : 'none',
                   }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#fafafe'}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = ''}
                 >
                   <div className="flex items-center gap-3.5">
                     <div
