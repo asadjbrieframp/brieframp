@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
 
     if (!proposal) return NextResponse.json({ error: 'Proposal not found' }, { status: 404 })
 
-    const clientData = proposal.clients as { name: string; designer_id: string } | null
+    const clientData = proposal.clients as unknown as { name: string; designer_id: string } | null
     if (!clientData) return NextResponse.json({ error: 'Client not found' }, { status: 404 })
 
     const { data: { user } } = await supabase.auth.admin.getUserById(clientData.designer_id)
