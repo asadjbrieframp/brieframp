@@ -48,7 +48,13 @@ export default function BriefForm({ clientId }: BriefFormProps) {
         additional_info: form.additional_info || null,
       })
       await supabase.from('clients').update({ status: 'brief_submitted' }).eq('id', clientId)
-      router.push('/brief/thank-you')
+
+      // Notify designer (fire-and-forget)
+      fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'brief_submitted', clientId }),
+      }).catch(() => {})      router.push('/brief/thank-you')
     } catch {
       setSubmitting(false)
     }
